@@ -25,5 +25,27 @@
 	
 	<script src="js/materialize.min.js"></script>
 	<script src="js/nav.js"></script>
+		<script>
+
+    // Script to register the service worker goes here
+	/*pada bagian ini melakukan register untuk service worker
+	script di bawah ini apabila hasil test sudah benar maka 
+	akan ada warna hijau pada bagian application pada service worker dan jika gagal 
+	maka yang berwarna hijau tadi akan berwarna merah
+	kemudian pada bagian console jika berhasil maka akan muncul registered
+	*/
+	
+if	(!('serviceWorker'	in	navigator))	{
+		console.log('Service	worker	not	supported');
+		//return;
+}
+navigator.serviceWorker.register('service-worker.js')
+.then(function()	{
+		console.log('Registered');
+})
+.catch(function(error)	{
+		console.log('Registration	failed:',	error);
+});
+    </script>
 	</body>
 	</html>
